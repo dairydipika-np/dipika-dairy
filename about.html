@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Enterprise Integrity | Dipika Dairy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #0f172a; --brand-blue: #1e3a8a; --bg-clean: #f8fafc; --surface: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        html, body { overflow-x: hidden; width: 100%; background-color: var(--bg-clean); padding: 1.5rem 0.75rem; }
+        
+        .about-wrap { background: var(--surface); width: 100%; max-width: 800px; margin: 0 auto; padding: 2rem 1.25rem; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); }
+        h1 { font-family: 'Cinzel', serif; font-size: 1.35rem; color: var(--primary); margin-bottom: 1.5rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 0.75rem; text-align: center; line-height: 1.3; }
+        p { font-size: 0.9rem; line-height: 1.6; color: #475569; margin-bottom: 1.25rem; text-align: justify; }
+        
+        .pillars { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2rem; width: 100%; }
+        .pillar-card { background: #f8fafc; padding: 1.25rem; border-radius: 6px; border-left: 4px solid var(--brand-blue); }
+        .pillar-title { font-weight: 600; color: var(--primary); margin-bottom: 0.4rem; font-size: 0.9rem; }
+        .pillar-desc { font-size: 0.8rem; color: #64748b; line-height: 1.5; }
+
+        @media (min-width: 768px) {
+            html, body { padding: 4rem 1rem; }
+            .about-wrap { padding: 4rem 3rem; }
+            h1 { font-size: 1.85rem; text-align: left; }
+            p { font-size: 0.95rem; }
+            .pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="about-wrap">
+        <h1>CORPORATE IDENTITY & SUPPLY CAPABILITY</h1>
+        <p>
+            <strong>Dipika Dairy</strong> is a certified wholesale commercial supply network operating high-capacity processing pipelines. We serve as the direct foundational source provider for corporate hospitality lines, institutional kitchens, regional distribution centers, and sweet manufacturing houses.
+        </p>
+        <p>
+            Our infrastructure maintains uncompromising verification standards, completely prioritizing safety protocols and biochemical purity markers. By utilizing a systemized cold chain distribution process, we guarantee the unadulterated delivery of premium bulk components including block curd lines, specialized pure table fat variants (Nauni), and high-fat cottage cheese matrices (Paneer).
+        </p>
+
+        <div class="pillars">
+            <div class="pillar-card">
+                <div class="pillar-title">Direct Source Integrity</div>
+                <div class="pillar-desc">No middlemen tracking. All raw milk processing and fat-separation layers happen under direct proprietary corporate visibility.</div>
+            </div>
+            <div class="pillar-card">
+                <div class="pillar-title">Uncompromising Quality</div>
+                <div class="pillar-desc">Every batch of milk, curd, ghee, and fresh paneer undergoes cold-chain thermal stability tests prior to final load shipment.</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

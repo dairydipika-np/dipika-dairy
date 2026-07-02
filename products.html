@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>B2B Inventory Desk | Dipika Dairy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #0f172a; --brand-blue: #1e3a8a; --bg-clean: #f8fafc; --surface: #ffffff; --text-main: #334155; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        html, body { overflow-x: hidden; width: 100%; background-color: var(--bg-clean); color: var(--text-main); }
+
+        /* Responsive Navigation Bar */
+        .navbar { background: var(--primary); color: white; padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; align-items: center; width: 100%; text-align: center; }
+        .nav-brand { font-family: 'Cinzel', serif; letter-spacing: 1px; font-weight: bold; font-size: 1.1rem; }
+        .nav-right { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; font-size: 0.8rem; width: 100%; }
+        .nav-right a { color: #94a3b8; text-decoration: none; padding: 0.2rem 0; }
+        #clientBadge { background: rgba(255,255,255,0.1); padding: 0.3rem 0.8rem; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); color: #fde68a; font-weight: 600; font-size: 0.75rem; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+        /* Catalog Layout Structuring */
+        .catalog-header { width: 100%; max-width: 1200px; margin: 1.5rem auto 0.5rem; padding: 0 1rem; display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-start; }
+        .catalog-header h2 { font-family: 'Cinzel', serif; font-size: 1.3rem; color: var(--primary); }
+        .batch-tracking { font-size: 0.75rem; color: #64748b; background: #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 500; }
+
+        /* Clean Mobile Stack Grid Cards */
+        .grid-container { width: 100%; max-width: 1200px; margin: 1rem auto; padding: 0 1rem; display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+        .item-card { background: var(--surface); border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 2px 4px rgba(0,0,0,0.01); }
+        .item-card img { width: 100%; height: 180px; object-fit: cover; border-bottom: 1px solid #f1f5f9; }
+        
+        .item-body { padding: 1.25rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 1rem; }
+        .item-title { font-size: 1.05rem; font-weight: 600; color: var(--primary); }
+        .item-spec { font-size: 0.75rem; color: #94a3b8; font-weight: 500; text-transform: uppercase; margin-top: 0.2rem; letter-spacing: 0.5px; }
+
+        .input-box { background: #f8fafc; border: 1px solid #cbd5e1; padding: 0.75rem; border-radius: 4px; width: 100%; font-size: 0.95rem; outline: none; -webkit-appearance: none; }
+        .input-box:focus { border-color: var(--brand-blue); background: #fff; }
+        .dual-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; width: 100%; }
+        .dual-inputs select { background: #f8fafc; border: 1px solid #cbd5e1; padding: 0.75rem; border-radius: 4px; font-size: 0.95rem; outline: none; width: 100%; }
+        .dual-inputs input { background: #f8fafc; border: 1px solid #cbd5e1; padding: 0.75rem; border-radius: 4px; font-size: 0.95rem; outline: none; width: 100%; -webkit-appearance: none; }
+
+        .checkout-bar { text-align: center; margin: 2.5rem 0 4rem; padding: 0 1rem; width: 100%; }
+        .btn-review { background: #059669; color: white; border: none; font-size: 0.95rem; font-weight: 600; padding: 1.1rem 1.5rem; width: 100%; max-width: 400px; border-radius: 6px; cursor: pointer; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2); }
+
+        /* Media queries to transition perfectly onto computer setups */
+        @media (min-width: 768px) {
+            .navbar { flex-direction: row; justify-content: space-between; padding: 1.2rem 2rem; }
+            .nav-brand { font-size: 1.3rem; }
+            .nav-right { flex-direction: row; gap: 1.5rem; font-size: 0.85rem; width: auto; }
+            .catalog-header { flex-direction: row; justify-content: space-between; align-items: flex-end; padding-bottom: 0.5rem; border-bottom: 2px solid #e2e8f0; }
+            .catalog-header h2 { font-size: 1.6rem; }
+            .grid-container { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+            .item-card img { height: 200px; }
+            .btn-review { font-size: 1.05rem; padding: 1.25rem 4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-brand">DIPIKA DAIRY Supply Engine</div>
+        <div class="nav-right">
+            <a href="about.html">Corporate Blueprint</a>
+            <span id="clientBadge">Connecting...</span>
+        </div>
+    </nav>
+
+    <div class="catalog-header">
+        <h2>Active Bulk Wholesale Manifest</h2>
+        <div class="batch-tracking">Verified Supply Line Standard</div>
+    </div>
+
+    <main class="grid-container">
+        <!-- Dudh -->
+        <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?w=500" alt="Dudh">
+            <div class="item-body">
+                <div>
+                    <h3 class="item-title">Dudh (Processed Crate Packs)</h3>
+                    <p class="item-spec">Standard Commercial Unit Logistics</p>
+                </div>
+                <input type="number" id="qty_dudh" min="0" placeholder="Enter number of Packets" class="input-box">
+            </div>
+        </div>
+
+        <!-- Dahi -->
+        <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=500" alt="Dahi">
+            <div class="item-body">
+                <div>
+                    <h3 class="item-title">Dahi (Bulk Industrial Buckets)</h3>
+                    <p class="item-spec">Heavy Commercial Standard</p>
+                </div>
+                <input type="number" id="qty_dahi" min="0" placeholder="Enter number of Buckets" class="input-box">
+            </div>
+        </div>
+
+        <!-- Ghee -->
+        <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1626132647523-66f5bf380027?w=500" alt="Ghee">
+            <div class="item-body">
+                <div>
+                    <h3 class="item-title">Pure Ghee (Sealed Jar Lots)</h3>
+                    <p class="item-spec">A-Grade Laboratory Tested</p>
+                </div>
+                <div class="dual-inputs">
+                    <select id="size_ghee">
+                        <option value="1 kg Jar">1.0 kg Jar</option>
+                        <option value="0.5 kg Jar">0.5 kg Jar</option>
+                    </select>
+                    <input type="number" id="qty_ghee" min="0" placeholder="Jars">
+                </div>
+            </div>
+        </div>
+
+        <!-- Nauni -->
+        <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?w=500" alt="Nauni">
+            <div class="item-body">
+                <div>
+                    <h3 class="item-title">Nauni (Raw Butter Blocks)</h3>
+                    <p class="item-spec">Pure Heavy Sourcing</p>
+                </div>
+                <input type="number" id="qty_nauni" min="0" step="0.5" placeholder="Enter weight in kg" class="input-box">
+            </div>
+        </div>
+
+        <!-- Paneer -->
+        <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1601050690597-df056fb4ce78?w=500" alt="Paneer">
+            <div class="item-body">
+                <div>
+                    <h3 class="item-title">Fresh Block Paneer (Cottage)</h3>
+                    <p class="item-spec">Vacuum Sealed Logistics Line</p>
+                </div>
+                <input type="number" id="qty_paneer" min="0" step="0.5" placeholder="Enter weight in kg" class="input-box">
+            </div>
+        </div>
+
+        <!-- Matka Dahi -->
+        <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=500" alt="Matka Dahi">
+            <div class="item-body">
+                <div>
+                    <h3 class="item-title">Earthen Matka Dahi (Clay Pot)</h3>
+                    <p class="item-spec">Authentic Cultured Setting</p>
+                </div>
+                <input type="number" id="qty_matka" min="0" placeholder="Enter total Clay Pots" class="input-box">
+            </div>
+        </div>
+
+        <!-- Batta Dahi -->
+        <div class="item-card">
+            <img src="https://images.unsplash.com/photo-1571244856341-4f3dd95db36e?w=500" alt="Batta Dahi">
+            <div class="item-body">
+                <div>
+                    <h3 class="item-title">Batta Dahi (Portion Cups)</h3>
+                    <p class="item-spec">Sealed Counter Top Portions</p>
+                </div>
+                <input type="number" id="qty_batta" min="0" placeholder="Enter pieces" class="input-box">
+            </div>
+        </div>
+    </main>
+
+    <div class="checkout-bar">
+        <button id="reviewBtn" class="btn-review">COMPILE SECURE MANIFEST SUMMARY</button>
+    </div>
+
+    <script>
+        const session = JSON.parse(localStorage.getItem('dipika_b2b_session'));
+        if(!session) { window.location.href = 'index.html'; }
+        else { document.getElementById('clientBadge').innerText = `🏢 ID: ${session.name.toUpperCase()}`; }
+
+        document.getElementById('reviewBtn').addEventListener('click', () => {
+            const currentCart = [
+                { name: 'Dudh (Packet)', qty: document.getElementById('qty_dudh').value, unit: 'Packets' },
+                { name: 'Dahi (Bucket)', qty: document.getElementById('qty_dahi').value, unit: 'Buckets' },
+                { name: 'Ghee (Jar Lot)', qty: document.getElementById('qty_ghee').value, unit: document.getElementById('size_ghee').value },
+                { name: 'Nauni White Butter', qty: document.getElementById('qty_nauni').value, unit: 'kg' },
+                { name: 'Fresh Block Paneer', qty: document.getElementById('qty_paneer').value, unit: 'kg' },
+                { name: 'Matka Dahi', qty: document.getElementById('qty_matka').value, unit: 'Pots' },
+                { name: 'Batta Dahi Cups', qty: document.getElementById('qty_batta').value, unit: 'Pieces' }
+            ].filter(obj => obj.qty && parseFloat(obj.qty) > 0);
+
+            if(currentCart.length === 0) {
+                alert("Supply Manifest Empty. Specify quantity allocations before compiling processing request.");
+                return;
+            }
+            localStorage.setItem('dipika_active_cart', JSON.stringify(currentCart));
+            window.location.href = 'order.html';
+        });
+    </script>
+</body>
+</html>
