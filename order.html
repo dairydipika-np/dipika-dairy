@@ -136,10 +136,17 @@
             btn.innerText = "TRANSMITTING MANIFEST INVOICE...";
             btn.disabled = true;
 
-            let plainTextSummary = "";
-            cart.forEach(item => {
-                plainTextSummary += `[ITEM]: ${item.name} | [QUANTITY]: ${item.qty} (${item.unit})\n`;
-            });
+           // NEW VERTICAL GRID FORMAT
+let plainTextSummary = "<table style='width:100%; border-collapse: collapse; font-family: sans-serif;'>";
+plainTextSummary += "<tr style='background: #1e3a8a; color: white;'><th style='padding: 8px; text-align: left;'>Item Description</th><th style='padding: 8px; text-align: left;'>Allocated Quantity</th></tr>";
+
+cart.forEach(item => {
+    plainTextSummary += `<tr style='border-bottom: 1px solid #e2e8f0;'>
+        <td style='padding: 8px; color: #0f172a; font-weight: 600;'>${item.name}</td>
+        <td style='padding: 8px; color: #334155;'>${item.qty} ${item.unit}</td>
+    </tr>`;
+});
+plainTextSummary += "</table>";
 
             const emailPayload = {
                 party_name: sessionData.name.toUpperCase(),
