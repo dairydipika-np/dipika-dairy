@@ -137,16 +137,12 @@
             btn.disabled = true;
 
            // NEW VERTICAL GRID FORMAT
-let plainTextSummary = "<table style='width:100%; border-collapse: collapse; font-family: sans-serif;'>";
-plainTextSummary += "<tr style='background: #1e3a8a; color: white;'><th style='padding: 8px; text-align: left;'>Item Description</th><th style='padding: 8px; text-align: left;'>Allocated Quantity</th></tr>";
+// PERFECT HTML VERTICAL BREAK FORMAT
+        let plainTextSummary = "";
 
-cart.forEach(item => {
-    plainTextSummary += `<tr style='border-bottom: 1px solid #e2e8f0;'>
-        <td style='padding: 8px; color: #0f172a; font-weight: 600;'>${item.name}</td>
-        <td style='padding: 8px; color: #334155;'>${item.qty} ${item.unit}</td>
-    </tr>`;
-});
-plainTextSummary += "</table>";
+        cart.forEach(item => {
+            plainTextSummary += `• <b>${item.name}</b> — ${item.qty} ${item.unit}<br>`;
+        });
 
             const emailPayload = {
                 party_name: sessionData.name.toUpperCase(),
